@@ -1,0 +1,20 @@
+app:
+  name: 'Film Creative RAG'
+  version: '1.0.0'
+  port: 7860
+
+content_types:
+  screenplay:
+    enabled: true
+    formats: ['fountain', 'pdf']
+  moodboard:
+    enabled: true
+    formats: ['pdf']
+
+performance:
+  gpu_memory: 'auto'
+  processing_quality: 'high'
+
+artist_mode:
+  simple_interface: true
+  visual_feedback: true
