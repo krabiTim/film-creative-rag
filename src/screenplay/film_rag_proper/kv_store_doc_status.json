@@ -1,0 +1,11 @@
+{
+  "doc-7b66134fe6371621ae01d4fba1a80061": {
+    "status": "pending",
+    "content": "Title: System Integration Test\n        \n        FADE IN:\n        \n        INT. DEVELOPMENT LAB - DAY\n        \n        SARAH (30), lead developer, monitors multiple screens showing AI analysis.\n        \n        SARAH\n        The LightRAG integration is finally working properly!\n        \n        MARCUS (35), project director, reviews the results.\n        \n        MARCUS\n        Excellent! The embedding function is configured correctly now.\n        \n        SARAH\n        All tests are passing. We're ready for production use.\n        \n        MARCUS\n        Perfect. Let's move to Phase 3.\n        \n        They celebrate the successful integration.\n        \n        FADE OUT.",
+    "content_summary": "Title: System Integration Test\n        \n        FADE IN:\n        \n        INT. DEVELOPMENT LAB - DAY\n        \n        SARAH (30), lead developer, monitors multiple screens showing AI analysis.\n        \n        SARAH\n        The LightRAG integration i...",
+    "content_length": 678,
+    "created_at": "2025-06-18T09:50:10.498183+00:00",
+    "updated_at": "2025-06-18T09:50:10.498188+00:00",
+    "file_path": "unknown_source"
+  }
+}
