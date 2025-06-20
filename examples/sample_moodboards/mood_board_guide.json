@@ -1,0 +1,29 @@
+{
+  "sample_mood_boards": {
+    "indie_film_noir": {
+      "description": "Dark, moody cinematography references",
+      "elements": [
+        "low-key lighting",
+        "urban locations",
+        "black and white tones"
+      ]
+    },
+    "romantic_comedy": {
+      "description": "Bright, warm visual references",
+      "elements": [
+        "natural lighting",
+        "warm colors",
+        "outdoor locations"
+      ]
+    }
+  },
+  "supported_formats": [
+    "PDF exports from Pinterest",
+    "Adobe Creative Suite PDFs"
+  ],
+  "optimal_content": [
+    "Color palette references",
+    "Lighting style examples",
+    "Location photographs"
+  ]
+}
