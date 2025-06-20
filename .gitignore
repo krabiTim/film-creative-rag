@@ -1,8 +1,66 @@
+# Film Creative RAG - .gitignore
+
+# Python
 __pycache__/
 *.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+venv/
+env/
+ENV/
 .venv/
-*.log
-models/
-cache/
-temp/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
 .DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+*.tmp
+temp/
+cache/
+
+# Large model files
+models/
+*.pth
+*.pt
+
+# Sensitive data
+.env
+credentials/
+secrets/
+
+# Ollama data (keep models local but don't commit)
+ollama_data/
+
+# Generated outputs
+outputs/
+exports/
