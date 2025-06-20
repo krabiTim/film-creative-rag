@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-🎬 Film Creative RAG - Demo Launch
-=================================
+🎬 Film Creative RAG - Demo Launch (Fixed)
+==========================================
 Launches working Gradio demo with Ollama integration
-Final step in Phase 2 setup
+Fixed Gradio compatibility issue
 """
 
 import gradio as gr
@@ -22,8 +22,8 @@ class FilmCreativeRAGDemo:
         self.ollama_url = "http://localhost:11434"
         self.config = self.load_config()
         
-        print("🎬 Film Creative RAG - Demo Launch")
-        print("=" * 35)
+        print("🎬 Film Creative RAG - Demo Launch (Fixed)")
+        print("=" * 42)
         print(f"Project directory: {self.project_dir}")
         print("")
     
@@ -307,7 +307,7 @@ python3 scripts/setup/02-ollama-setup.py
         return status
     
     def create_interface(self):
-        """Create the Gradio interface"""
+        """Create the Gradio interface with fixed parameters"""
         
         # Custom CSS for professional appearance
         custom_css = """
@@ -322,14 +322,9 @@ python3 scripts/setup/02-ollama-setup.py
             border-radius: 10px;
             margin-bottom: 2rem;
         }
-        .status-box {
-            padding: 1rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-        }
         """
         
-        with gr.Blocks(css=custom_css, title="🎬 Film Creative RAG", theme=gr.themes.Soft()) as interface:
+        with gr.Blocks(css=custom_css, title="🎬 Film Creative RAG") as interface:
             
             # Header
             gr.HTML("""
@@ -352,20 +347,18 @@ python3 scripts/setup/02-ollama-setup.py
                         screenplay_input = gr.Textbox(
                             label="📜 Screenplay Content (Fountain Format Preferred)",
                             placeholder="Paste your screenplay content here...\n\nSupported formats:\n• Fountain (.fountain)\n• Plain text\n• Copy-paste from Final Draft",
-                            lines=20,
-                            max_lines=30
+                            lines=20
                         )
                         
                         with gr.Row():
-                            analyze_btn = gr.Button("🎭 Analyze Screenplay", variant="primary", size="lg")
-                            sample_btn = gr.Button("📄 Load Sample Screenplay", variant="secondary")
+                            analyze_btn = gr.Button("🎭 Analyze Screenplay", variant="primary")
+                            sample_btn = gr.Button("📄 Load Sample", variant="secondary")
                             clear_btn = gr.Button("🗑️ Clear", variant="secondary")
                     
                     with gr.Column(scale=2):
                         analysis_output = gr.Textbox(
                             label="🤖 AI Analysis Results",
                             lines=25,
-                            max_lines=30,
                             interactive=False,
                             value="Click 'Analyze Screenplay' to see AI-powered insights about your script..."
                         )
@@ -386,62 +379,51 @@ python3 scripts/setup/02-ollama-setup.py
             
             with gr.Tab("ℹ️ About & Help"):
                 gr.Markdown("""
-                ## 🎬 Film Creative RAG System
+                ## 🎬 Film Creative RAG System v2.0
                 
-                ### What Does This Do?
-                This system analyzes your screenplays using advanced AI to provide insights for:
-                - **Character Development**: Identify main characters and their arcs
-                - **Scene Analysis**: Understand pacing, mood, and structure  
-                - **Production Planning**: Get insights for scheduling and logistics
-                - **Creative Feedback**: AI-powered suggestions for improvement
+                ### ✅ System Status: Phase 2 Complete!
                 
-                ### Key Features
-                - **🔒 100% Local Processing** - Your scripts never leave your computer
-                - **⚡ GPU Accelerated** - Optimized for NVIDIA RTX 4090
-                - **🎯 Artist-Friendly** - No technical knowledge required
-                - **📊 Professional Output** - Results ready for production meetings
-                - **🎨 Creative Focus** - Designed specifically for filmmakers
+                **What's Working:**
+                - 🔧 GitHub Integration: Repository with proper workflow
+                - 🤖 Local AI Processing: Ollama + llama3.2:3b model
+                - 🎭 Screenplay Analysis: Character, scene, and structure insights
+                - 🔒 Privacy-First: 100% local processing, no cloud connections
+                - ⚡ RTX 4090 Ready: GPU acceleration optimized
                 
-                ### How to Use
-                1. **Enter your screenplay title** in the title field
-                2. **Paste your screenplay content** (Fountain format works best)
+                ### How to Use This Demo
+                1. **Enter screenplay title** in the title field
+                2. **Paste screenplay content** (or click "Load Sample")
                 3. **Click "Analyze Screenplay"** and wait 30-60 seconds
-                4. **Review the AI analysis** for creative and production insights
-                5. **Use the insights** for planning your film project
+                4. **Review AI insights** for production planning
                 
-                ### Supported Formats
-                - **Fountain** (.fountain) - Preferred format
-                - **Plain Text** - Copy-paste from any word processor
-                - **Final Draft** - Copy-paste from Final Draft
-                - **WriterDuet** - Export as text and paste
+                ### What You Get
+                - **Character Analysis**: Main characters and their roles
+                - **Scene Breakdown**: Location, mood, and structure
+                - **Production Notes**: Filming requirements and logistics
+                - **Creative Insights**: AI suggestions for improvement
                 
-                ### System Requirements
-                - **OS**: Ubuntu 22.04 (WSL2 supported)
-                - **GPU**: NVIDIA RTX 4090 (recommended)
-                - **RAM**: 16GB minimum, 32GB recommended
-                - **Storage**: 10GB free space for models
+                ### Privacy & Performance
+                - **100% Local**: Your scripts never leave this computer
+                - **No Logging**: No data storage or tracking
+                - **GPU Optimized**: Fast analysis with RTX 4090
+                - **Open Source**: Full transparency in processing
                 
-                ### Privacy & Security
-                - **No cloud connections** - Everything runs locally
-                - **No data logging** - Your screenplays are not stored
-                - **No external APIs** - Complete privacy protection
-                - **Open source** - Full transparency in processing
+                ### Technical Details
+                - **LLM**: llama3.2:3b (local model)
+                - **Interface**: Gradio web UI
+                - **Processing**: Ollama backend
+                - **Storage**: Local filesystem only
                 
-                ### Troubleshooting
-                - **Service not running**: Run `ollama serve &` in terminal
-                - **Model missing**: Run `ollama pull llama3.2:3b`
-                - **Slow analysis**: Normal for first run, speeds up after
-                - **Error messages**: Check System Status tab for details
-                
-                ### Support
-                - **GitHub Issues**: Report bugs and request features
-                - **Documentation**: Check the `docs/` folder
-                - **Community**: Join discussions for tips and tricks
+                ### Next Phase: Mood Board Processing
+                Phase 3 will add:
+                - PDF mood board analysis
+                - Visual-narrative alignment
+                - Cross-modal intelligence
+                - Production planning integration
                 
                 ---
                 
-                **Film Creative RAG v2.0** - Phase 2 Complete  
-                *Made with ❤️ for independent filmmakers*
+                **🎬 Film Creative RAG - Made for Independent Filmmakers**
                 """)
             
             # Event handlers
@@ -467,11 +449,11 @@ python3 scripts/setup/02-ollama-setup.py
             )
             
             test_connection_btn.click(
-                fn=lambda: self.analyze_screenplay("INT. TEST - DAY\n\nTEST CHARACTER\nThis is a test.", "Connection Test"),
+                fn=lambda: self.analyze_screenplay("INT. TEST - DAY\n\nTEST CHARACTER\nThis is a connection test.", "Connection Test"),
                 outputs=status_display
             )
             
-            # Load initial status
+            # Load initial status when interface starts
             interface.load(
                 fn=self.get_system_info,
                 outputs=status_display
@@ -480,7 +462,7 @@ python3 scripts/setup/02-ollama-setup.py
         return interface
     
     def launch_demo(self):
-        """Launch the demo interface"""
+        """Launch the demo interface with fixed Gradio parameters"""
         print("🚀 Launching Film Creative RAG Demo...")
         print("")
         
@@ -508,20 +490,19 @@ python3 scripts/setup/02-ollama-setup.py
         interface = self.create_interface()
         
         try:
+            # Fixed launch parameters - removed incompatible options
             interface.launch(
                 server_name="0.0.0.0",
                 server_port=7860,
                 share=False,  # Keep it local for privacy
                 show_error=True,
-                inbrowser=True,
-                show_tips=False,
-                quiet=False
+                inbrowser=True
             )
         except KeyboardInterrupt:
             print("\n🛑 Demo stopped by user")
         except Exception as e:
             print(f"\n❌ Demo failed to launch: {e}")
-            print("Try running: python3 scripts/setup/02-ollama-setup.py")
+            print("Check Gradio version - may need update")
 
 def main():
     """Main demo launch function"""

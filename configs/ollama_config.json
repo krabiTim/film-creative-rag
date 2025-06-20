@@ -1,0 +1,20 @@
+{
+  "ollama": {
+    "url": "http://localhost:11434",
+    "default_model": "llama3.2:3b",
+    "fallback_model": "llama3.2:1b",
+    "timeout": 60,
+    "max_tokens": 512,
+    "temperature": 0.7
+  },
+  "screenplay_analysis": {
+    "enabled": true,
+    "prompt_template": "screenplay_analysis.txt",
+    "max_length": 5000
+  },
+  "performance": {
+    "gpu_acceleration": true,
+    "batch_processing": false,
+    "concurrent_requests": 1
+  }
+}

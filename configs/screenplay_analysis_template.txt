@@ -1,0 +1,15 @@
+
+Analyze this screenplay excerpt and provide a structured analysis:
+
+1. CHARACTERS: List all character names mentioned
+2. LOCATION: Identify the scene setting/location
+3. SCENE TYPE: Interior/Exterior and time of day
+4. MOOD: Describe the emotional tone
+5. ACTION: Key events or conflicts in the scene
+6. DIALOGUE: Assessment of dialogue quality
+7. PRODUCTION: Notable requirements for filming
+
+Screenplay Content:
+{screenplay_content}
+
+Provide analysis in the above format:
